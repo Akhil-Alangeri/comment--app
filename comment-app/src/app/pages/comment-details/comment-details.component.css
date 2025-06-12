@@ -1,0 +1,111 @@
+.comment-container {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: auto;
+  margin-top: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.comment-container h2 {
+  color: #333;
+  font-weight: 700;
+}
+
+.comment-container p {
+  color: #555;
+  font-size: 16px;
+}
+
+.reply-box {
+  background-color: #ffffff;
+  padding: 16px;
+  border-left: 4px solid #007bff;
+  border-radius: 12px;
+  margin-top: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.reply-box:hover {
+  background-color: #f1f9ff;
+}
+
+.timestamp {
+  color: #888;
+  font-size: 12px;
+  margin-top: -8px;
+}
+
+.btn-outline-primary {
+  margin-right: 8px;
+}
+
+.nested-reply-form {
+  margin-top: 12px;
+  padding-left: 16px;
+}
+
+.nested-replies {
+  margin-top: 10px;
+  padding-left: 16px;
+  border-left: 2px dashed #ccc;
+}
+
+.nested-box {
+  background-color: #f7f7f7;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nested-box:hover {
+  background-color: #eef7ff;
+}
+
+.btn-danger {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-left: 8px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+input.form-control {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+button.btn {
+  border-radius: 8px;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-2 {
+  margin-top: 0.75rem !important;
+}
+
+.ms-3 {
+  margin-left: 1rem !important;
+}
+
+.me-1 {
+  margin-right: 0.25rem;
+}
+.me-2 {
+  margin-right: 0.5rem;
+}

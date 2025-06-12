@@ -1,0 +1,13 @@
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  h1 {
+    text-align: center !important;
+    color:red
+  }
+  ul{
+    list-style-type: none;
+  }
+}

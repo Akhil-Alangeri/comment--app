@@ -1,0 +1,79 @@
+<div *ngIf="commentItem" class="comment-container">
+  <h2>{{ commentItem.title }}</h2>
+  <p>{{ commentItem.description }}</p>
+
+  <h3>Replies</h3>
+  <div class="comment-card">
+    <div
+      *ngFor="let reply of commentItem.replies; let i = index"
+      class="reply-box"
+    >
+      <p>
+        <strong>{{ reply.replyText }}</strong>
+        <span class="timestamp">({{ reply.timestamp }})</span>
+      </p>
+
+      <!-- 👍 Like / 👎 Unlike -->
+      <div style="margin-bottom: 10px">
+        <!-- In your AngularJS view or component HTML -->
+        <button class="btn btn-outline-success btn-sm me-1">
+          <i class="bi bi-hand-thumbs-up-fill icon"></i>
+        </button>
+
+        <button class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-hand-thumbs-down-fill"></i>
+        </button>
+      </div>
+
+      <button class="btn btn-danger btn-sm me-2" (click)="onDeleteComment(i)">
+        Delete
+      </button>
+
+      <button
+        class="btn btn-sm btn-outline-primary"
+        (click)="toggleReplyForm(reply)"
+      >
+        {{ reply.showReplyForm ? "Cancel" : "Reply" }}
+      </button>
+
+      <div *ngIf="reply.showReplyForm" class="nested-reply-form">
+        <input
+          [(ngModel)]="reply.replyInput"
+          placeholder="Write a nested reply"
+          class="form-control mt-2"
+        />
+        <button (click)="submitNestedReply(reply)" class="btn btn-success mt-1">
+          Submit
+        </button>
+      </div>
+
+      <div *ngIf="reply.replies?.length" class="nested-replies ms-3 mt-2">
+        <div
+          *ngFor="let nested of reply.replies; let j = index"
+          class="nested-box"
+        >
+          <p>
+            ↳ {{ nested.replyText }}
+            <span class="timestamp">({{ nested.timestamp }})</span>
+          </p>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="onDeleteNested(reply, j)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="mt-4">Add New Reply</h4>
+  <input
+    [(ngModel)]="newReplyText"
+    placeholder="Write a reply"
+    class="form-control"
+  />
+  <button (click)="submitReply()" class="btn btn-primary mt-2">
+    Add Reply
+  </button>
+</div>

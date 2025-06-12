@@ -1,0 +1,9 @@
+<div class="comments-container">
+  <h1 class="text-center">Comments list</h1>
+  <p>here some description</p>
+  <ul>
+    <li *ngFor="let item of commentsList">
+      <app-comment-item [item]="item"></app-comment-item>
+    </li>
+  </ul>
+</div>

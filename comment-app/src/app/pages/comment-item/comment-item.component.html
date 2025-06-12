@@ -1,0 +1,9 @@
+<div class="comment-card">
+  <div class="text-card">
+    <h1>{{ item.title }}</h1>
+    <p>{{ item.description }}</p>
+    <p>
+      <a [routerLink]="['/comments-details', item.id]">See more...</a>
+    </p>
+  </div>
+</div>
